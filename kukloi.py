@@ -23,11 +23,21 @@ def animate(i):
       k = 0
   else:
       k = i - 197
+  if i < 300:
+      l = 0
+  else:
+      l = i - 297
+  if i < 400:
+      m = 0
+  else:
+      m = i - 397
   # Update circle point's position
   circle_point,=ax.plot(3, 3, 'o', markerfacecolor='red', markeredgecolor = 'red', markersize = i, markeredgewidth = 3 )
   circle_point1,=ax.plot(3, 3, 'o', markerfacecolor='orange', markeredgecolor = 'orange', markersize = j, markeredgewidth = 3 )
-  return [circle_point, circle_point1,]
+   circle_point2,=ax.plot(3, 3, 'o', markerfacecolor='yellow', markeredgecolor = 'yellow', markersize = k, markeredgewidth = 3 )
+  circle_point3,=ax.plot(3, 3, 'o', markerfacecolor='green', markeredgecolor = 'green', markersize = l, markeredgewidth = 3 )
+  return [circle_point, circle_point1,circle_point2,circle_point3,]
    # Interval draws a new frame every given milliseconds
-ani = animation.FuncAnimation(fig, animate, np.arange(3, 300),
+ani = animation.FuncAnimation(fig, animate, np.arange(3, 500),
 init_func=init, interval=25)
 ani.save("wave.mp4", fps=40)
