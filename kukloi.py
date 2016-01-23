@@ -31,13 +31,24 @@ def animate(i):
       m = 0
   else:
       m = i - 397
+  if i < 500:
+      p = 0
+  else:
+      p = i - 497
+  if i < 600:
+      n = 0
+  else:
+      n = i - 597
   # Update circle point's position
   circle_point,=ax.plot(3, 3, 'o', markerfacecolor='red', markeredgecolor = 'red', markersize = i, markeredgewidth = 3 )
   circle_point1,=ax.plot(3, 3, 'o', markerfacecolor='orange', markeredgecolor = 'orange', markersize = j, markeredgewidth = 3 )
-   circle_point2,=ax.plot(3, 3, 'o', markerfacecolor='yellow', markeredgecolor = 'yellow', markersize = k, markeredgewidth = 3 )
+  circle_point2,=ax.plot(3, 3, 'o', markerfacecolor='yellow', markeredgecolor = 'yellow', markersize = k, markeredgewidth = 3 )
   circle_point3,=ax.plot(3, 3, 'o', markerfacecolor='green', markeredgecolor = 'green', markersize = l, markeredgewidth = 3 )
-  return [circle_point, circle_point1,circle_point2,circle_point3,]
+  circle_point4,=ax.plot(3, 3, 'o', markerfacecolor='blue', markeredgecolor = 'blue', markersize = m, markeredgewidth = 3 )
+  circle_point5,=ax.plot(3, 3, 'o', markerfacecolor='indigo', markeredgecolor = 'indigo', markersize = p, markeredgewidth = 3 )
+  circle_point6,=ax.plot(3, 3, 'o', markerfacecolor='violet', markeredgecolor = 'violet', markersize = n, markeredgewidth = 3 )
+  return [circle_point, circle_point1,circle_point2,circle_point3,circle_point4, circle_point5,circle_point6,]
    # Interval draws a new frame every given milliseconds
-ani = animation.FuncAnimation(fig, animate, np.arange(3, 500),
+ani = animation.FuncAnimation(fig, animate, np.arange(3, 700),
 init_func=init, interval=25)
 ani.save("wave.mp4", fps=40)
